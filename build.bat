@@ -1,5 +1,7 @@
 @echo off
 
+set ProjectDir=%~dp0
+
 :: Options
 set BaseName=testbench
 set Source=main.c
@@ -10,8 +12,7 @@ set LibDirs=
 set Libs=
 
 :: Setup Flags
-set CommonFlags=/nologo /std:c11 /Oi /FC /EHsc /WX /W4 /wd4100 /wd4189
-:: /wd4505 /wd4201 /wd4127 /wd4456
+set CommonFlags=/nologo /std:c11 /Oi /FC /EHa- /WX /W4 /wd4100 /wd4189
 
 :: Release Flags
 ::set CompilerFlags=/O2 /MT
@@ -36,6 +37,6 @@ if not exist build mkdir build
 pushd build
 
 del *.pdb > NUL 2> NUL
-cl %CompilerSettings% ..\src\%Source% /link %LinkerSettings%
+cl %CompilerSettings% %ProjectDir%\src\%Source% /link %LinkerSettings%
 
 popd
