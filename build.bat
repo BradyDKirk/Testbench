@@ -3,7 +3,7 @@
 set ProjectDir=%~dp0
 
 :: Options
-set BaseName=testbench
+set BaseName=workbench
 set Source=main.c
 
 set Definess=
