@@ -15,9 +15,9 @@ set Libs=
 set CommonFlags=/nologo /std:c11 /Oi /FC /EHa- /WX /W4 /wd4100 /wd4189
 
 :: Release Flags
-::set CompilerFlags=/O2 /MT
+set CompilerFlags=/O2 /MT
 :: Debug Flags
-set CompilerFlags=/Od /MTd /Z7
+::set CompilerFlags=/Od /MTd /Z7
 
 :: Enable ASan
 ::set CompilerFlags=%CompilerFlags% /fsanitize=address
